@@ -12,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -36,7 +37,7 @@ public class BeerServiceImpl implements BeerService {
 
         if (!StringUtils.isEmpty(beerName) && !StringUtils.isEmpty(beerStyle)) {
             //search both
-            beerPage = beerRepository.findAllByBeerNameAAndBeerStyle(beerName, beerStyle, pageRequest);
+            beerPage = beerRepository.findAllByBeerNameAndBeerStyle(beerName, beerStyle, pageRequest);
         } else if (!StringUtils.isEmpty(beerName) && StringUtils.isEmpty(beerStyle)) {
             //search beer name
             beerPage = beerRepository.findAllByBeerName(beerName, pageRequest);

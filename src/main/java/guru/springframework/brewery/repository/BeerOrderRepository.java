@@ -2,7 +2,7 @@ package guru.springframework.brewery.repository;
 
 import guru.springframework.brewery.domain.BeerOrder;
 import guru.springframework.brewery.domain.Customer;
-import guru.springframework.brewery.domain.OrderStatusEnum;
+import guru.springframework.brewery.web.model.OrderStatusEnum;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

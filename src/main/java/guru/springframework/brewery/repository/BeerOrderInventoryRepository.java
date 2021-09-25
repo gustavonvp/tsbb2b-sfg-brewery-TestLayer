@@ -8,5 +8,6 @@ import java.util.List;
 import java.util.UUID;
 
 public interface BeerOrderInventoryRepository extends JpaRepository<BeerInventory, UUID> {
+
     List<BeerInventory> findAllByBeer(Beer beer);
 }

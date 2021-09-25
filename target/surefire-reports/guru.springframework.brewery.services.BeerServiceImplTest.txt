@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: guru.springframework.brewery.services.BeerServiceImplTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.851 s <<< FAILURE! - in guru.springframework.brewery.services.BeerServiceImplTest
-listBeers  Time elapsed: 0.761 s  <<< ERROR!
-java.lang.NullPointerException
-	at guru.springframework.brewery.services.BeerServiceImplTest.listBeers(BeerServiceImplTest.java:55)
-

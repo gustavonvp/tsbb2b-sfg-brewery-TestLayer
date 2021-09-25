@@ -3,6 +3,7 @@ package guru.springframework.brewery.bootstrap;
 import guru.springframework.brewery.domain.*;
 import guru.springframework.brewery.repository.*;
 import guru.springframework.brewery.web.model.BeerStyleEnum;
+import guru.springframework.brewery.web.model.OrderStatusEnum;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

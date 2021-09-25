@@ -1,5 +1,6 @@
 package guru.springframework.brewery.web.mappers;
 
+import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
@@ -8,7 +9,7 @@ import java.time.ZoneOffset;
 
 @Component
 public class DateMapper {
-    OffsetDateTime asOffsetDateTime(Timestamp ts){
+    public OffsetDateTime asOffsetDateTime(Timestamp ts){
         if (ts != null){
             return OffsetDateTime.of(ts.toLocalDateTime().getYear(), ts.toLocalDateTime().getMonthValue(),
                     ts.toLocalDateTime().getDayOfMonth(), ts.toLocalDateTime().getHour(), ts.toLocalDateTime().getMinute(),

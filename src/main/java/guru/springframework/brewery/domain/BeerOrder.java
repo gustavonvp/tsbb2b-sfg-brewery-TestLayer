@@ -1,5 +1,6 @@
 package guru.springframework.brewery.domain;
 
+import guru.springframework.brewery.web.model.OrderStatusEnum;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,7 +28,7 @@ public class BeerOrder extends BaseEntity {
         this.customerRef = customerRef;
         this.customer = customer;
         this.beerOrderLine = beerOrderLine;
-        this.orderStatusEnum = orderStatusEnum;
+        this.orderStatus = orderStatusEnum;
         this.orderStatusCallbackUrl = orderStatusCallbackUrl;
     }
 
@@ -40,7 +41,7 @@ public class BeerOrder extends BaseEntity {
     @Fetch(FetchMode.JOIN)
     private Set<BeerOrderLine> beerOrderLine;
 
-    private OrderStatusEnum orderStatusEnum = OrderStatusEnum.NEW;
+    private OrderStatusEnum orderStatus = OrderStatusEnum.NEW;
     private String orderStatusCallbackUrl;
 
 }
