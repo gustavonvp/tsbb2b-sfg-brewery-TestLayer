@@ -8,12 +8,22 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
+import java.util.UUID;
 
-@Builder
 @NoArgsConstructor
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class BeerDTO extends  BaseItem {
+
+    @Builder
+    public BeerDTO(UUID id, Integer version, OffsetDateTime createdDate, OffsetDateTime lastModifiedDate, String beerName, BeerStyleEnum beerStyleEnum, Long upc, Integer quantityOnHand, BigDecimal price) {
+        super(id, version, createdDate, lastModifiedDate);
+        this.beerName = beerName;
+        this.beerStyleEnum = beerStyleEnum;
+        this.upc = upc;
+        this.quantityOnHand = quantityOnHand;
+        this.price = price;
+    }
 
     private String beerName;
     private BeerStyleEnum beerStyleEnum;
