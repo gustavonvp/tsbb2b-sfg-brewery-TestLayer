@@ -15,3 +15,4 @@ For questions and help:
 * Or post in the Slack Community exclusive to the course.
 
 GitHub Issues will not be addressed.
+[![CircleCI](https://circleci.com/gh/gustavonvp/tsbb2b-sfg-brewery-TestLayer/tree/master.svg?style=svg)](https://circleci.com/gh/gustavonvp/tsbb2b-sfg-brewery-TestLayer/tree/master)
