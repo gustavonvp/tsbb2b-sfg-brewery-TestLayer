@@ -17,3 +17,7 @@ For questions and help:
 GitHub Issues will not be addressed.
 
 
+<<<<<<< HEAD
+=======
+[![CircleCI](https://circleci.com/gh/gustavonvp/tsbb2b-sfg-brewery-TestLayer/tree/master.svg?style=svg)](https://circleci.com/gh/gustavonvp/tsbb2b-sfg-brewery-TestLayer/tree/master)
+>>>>>>> 9774b91bd270b015fca00ab908631e6bd77146ab
