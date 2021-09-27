@@ -63,13 +63,14 @@ class BeerControllerTest {
         reset(beerService);
     }
 
+
     @Test
-    void listBeers() throws Exception {
+    void testGetBeerById() throws Exception {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ");
 
         given(beerService.findBeerById(any())).willReturn(validBeer);
 
-         mockMvc.perform(get("/api/v1/beer" + validBeer.getId()))
+        MvcResult result=  mockMvc.perform(get("/api/v1/beer/" + validBeer.getId()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(jsonPath("$.id", is(validBeer.getId().toString())))
@@ -78,8 +79,10 @@ class BeerControllerTest {
                         is(dateTimeFormatter.format(validBeer.getCreatedDate()))))
                 .andReturn();
 
+        System.out.println(result.getResponse().getContentAsString());
 
     }
+
 
     @DisplayName("List Ops - ")
     @Nested
@@ -115,11 +118,7 @@ class BeerControllerTest {
 
             given(beerService.listBeers(beerNameCaptor.capture(), beerStyleEnumCaptor.capture(),
                     pageRequestCaptor.capture())).willReturn(beerPagedList);
-
-
         }
-
-
 
         @DisplayName("Test list beers - no parameters")
         @Test
@@ -131,7 +130,6 @@ class BeerControllerTest {
                     .andExpect(jsonPath("$.content", hasSize(2)))
                     .andExpect(jsonPath("$.content[0].id", is(validBeer.getId().toString())));
         }
-
     }
 
 }

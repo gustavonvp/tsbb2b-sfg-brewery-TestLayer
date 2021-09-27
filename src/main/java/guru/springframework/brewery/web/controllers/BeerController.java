@@ -1,7 +1,5 @@
 package guru.springframework.brewery.web.controllers;
 
-import guru.springframework.brewery.domain.Beer;
-import guru.springframework.brewery.repository.BeerRepository;
 import guru.springframework.brewery.services.BeerService;
 import guru.springframework.brewery.web.model.BeerDTO;
 import guru.springframework.brewery.web.model.BeerPagedList;
@@ -23,7 +21,7 @@ public class BeerController {
 
     private final BeerService beerService;
 
-    public BeerController(BeerService beerService, BeerRepository beerRepository) {
+    public BeerController(BeerService beerService) {
         this.beerService = beerService;
     }
 
