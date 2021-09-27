@@ -4,6 +4,7 @@ import guru.springframework.brewery.services.BeerService;
 import guru.springframework.brewery.web.model.BeerDTO;
 import guru.springframework.brewery.web.model.BeerPagedList;
 import guru.springframework.brewery.web.model.BeerStyleEnum;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.*;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
@@ -29,6 +30,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.reset;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(BeerController.class)
@@ -67,7 +69,7 @@ class BeerControllerTest {
 
         given(beerService.findBeerById(any())).willReturn(validBeer);
 
-        MvcResult result=  mockMvc.perform(get("/api/v1/beer/" + validBeer.getId()))
+         mockMvc.perform(get("/api/v1/beer" + validBeer.getId()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(jsonPath("$.id", is(validBeer.getId().toString())))
@@ -76,7 +78,6 @@ class BeerControllerTest {
                         is(dateTimeFormatter.format(validBeer.getCreatedDate()))))
                 .andReturn();
 
-        System.out.println(result.getResponse().getContentAsString());
 
     }
 
@@ -130,7 +131,6 @@ class BeerControllerTest {
                     .andExpect(jsonPath("$.content", hasSize(2)))
                     .andExpect(jsonPath("$.content[0].id", is(validBeer.getId().toString())));
         }
-
 
     }
 

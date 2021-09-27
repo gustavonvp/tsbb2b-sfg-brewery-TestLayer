@@ -1,11 +1,11 @@
 package guru.springframework.brewery.services;
 
+import guru.springframework.brewery.domain.Beer;
 import guru.springframework.brewery.web.model.BeerDTO;
 import guru.springframework.brewery.web.model.BeerPagedList;
 import guru.springframework.brewery.web.model.BeerStyleEnum;
 import org.springframework.data.domain.PageRequest;
 
-import java.util.List;
 import java.util.UUID;
 
 public interface BeerService {

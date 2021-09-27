@@ -23,7 +23,6 @@ import java.util.UUID;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
 
 
 @DataJpaTest
@@ -57,7 +56,7 @@ public class BeerServiceImplTest {
         DefaultBreweryLoader bootstrap = new DefaultBreweryLoader(breweryRepository,beerRepository,beerOrderInventoryRepository,beerOrderRepository,customerRepository);
         bootstrap.run(); //load data
         MockitoAnnotations.initMocks(this);
-        beerService = new BeerServiceImpl(BeerMapper.INSTANCE, beerRepository);
+        beerService = new BeerServiceImpl(beerRepository, BeerMapper.INSTANCE);
     }
 
 

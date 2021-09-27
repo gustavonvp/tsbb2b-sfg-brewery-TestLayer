@@ -27,7 +27,7 @@ class BeerMapperTest {
     public void setup() {
         repositoryMock = mock(BeerRepository.class);
         mapperMock = mock(BeerMapper.class);
-        beerService = new BeerServiceImpl(mapperMock, repositoryMock);
+        beerService = new BeerServiceImpl(repositoryMock, mapperMock);
     }
 
     @Test

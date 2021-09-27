@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: guru.springframework.brewery.services.BeerServiceCrudImplTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.736 s <<< FAILURE! - in guru.springframework.brewery.services.BeerServiceCrudImplTest
+testSaveBeer  Time elapsed: 0.06 s  <<< ERROR!
+java.lang.NullPointerException
+	at guru.springframework.brewery.services.BeerServiceCrudImplTest.testSaveBeer(BeerServiceCrudImplTest.java:77)
+

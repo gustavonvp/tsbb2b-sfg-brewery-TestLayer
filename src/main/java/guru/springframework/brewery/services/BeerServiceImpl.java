@@ -12,7 +12,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
 
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -23,12 +22,12 @@ public class BeerServiceImpl implements BeerService {
     private final BeerRepository beerRepository;
     private final BeerMapper beerMapper;
 
+    private BeerService beerService;
 
-    public BeerServiceImpl(BeerMapper beerMapper, BeerRepository beerRepository) {
+    public BeerServiceImpl(BeerRepository beerRepository, BeerMapper beerMapper) {
         this.beerRepository = beerRepository;
         this.beerMapper = beerMapper;
     }
-
 
     @Override
     public BeerPagedList listBeers(String beerName, BeerStyleEnum beerStyle, PageRequest pageRequest) {
@@ -71,5 +70,4 @@ public class BeerServiceImpl implements BeerService {
             throw new RuntimeException("Not Found");
         }
     }
-
 }

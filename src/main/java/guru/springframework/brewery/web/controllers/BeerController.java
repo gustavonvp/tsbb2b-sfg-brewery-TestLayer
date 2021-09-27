@@ -1,5 +1,7 @@
 package guru.springframework.brewery.web.controllers;
 
+import guru.springframework.brewery.domain.Beer;
+import guru.springframework.brewery.repository.BeerRepository;
 import guru.springframework.brewery.services.BeerService;
 import guru.springframework.brewery.web.model.BeerDTO;
 import guru.springframework.brewery.web.model.BeerPagedList;
@@ -11,17 +13,17 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
+
 @RequestMapping("/api/v1/beer")
 @RestController
 public class BeerController {
-
 
     private static final Integer DEFAULT_PAGE_NUMBER = 0;
     private static final Integer DEFAULT_PAGE_SIZE = 25;
 
     private final BeerService beerService;
 
-    public BeerController(BeerService beerService) {
+    public BeerController(BeerService beerService, BeerRepository beerRepository) {
         this.beerService = beerService;
     }
 
